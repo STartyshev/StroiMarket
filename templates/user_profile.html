@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="discription"
+          content="Всё для строительства, ремонта и отделки. Широкий ассортимент товаров оптом и в розницу. Доставка по городу (Красноярск) и области.">
+    <meta name="keywords"
+          content="строймаркет, стройматериалы, строительные материалы, отделочные материалы, строительство, ремонт, отделка">
+    <title>СтройМаркет - интернет-магазин строительных и отделочных материалов.</title>
+    <link rel="stylesheet" href="http://127.0.0.1:5500/styles/header.css" type="text/css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/styles/navigation.css" type="text/css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/styles/footer.css" type="text/css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/styles/main-theme.css" type="text/css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/styles/registration-login.css" type="text/css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/profile/styles/personal-info.css" type="text/css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/profile/styles/bonus-card-info.css" type="text/css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/profile/styles/account-actions.css" type="text/css">
+    <!-- <link rel="stylesheet" href="http://127.0.0.1:5500/styles/dark-theme.css" type="text/css"> -->
+</head>
+
+<body class="main">
+<header class="header-all-space">
+    <div class="header">
+        <div class="brand-container">
+            <a href="http://127.0.0.1:5500" style="display: flex;">
+                <img src="http://127.0.0.1:5500/images/icons/main.svg" alt="Лого" class="main-logo">
+            </a>
+            <a href="http://127.0.0.1:5500">
+                <h1>СтройМаркет</h1>
+            </a>
+        </div>
+
+        <div class="main-info-container">
+            <div class="location-container">
+                <img src="http://127.0.0.1:5500/images/icons/map-marker.svg" alt="Иконка маркера" class="marker-icon">
+                <a href="https://go.2gis.com/AWkUy" target="_blank" class="location-text red-link">г.
+                    Красноярск,<br>ул.
+                    Новосибирская 42</a>
+            </div>
+            <div class="phone-number-container">
+                <img src="http://127.0.0.1:5500/images/icons/call.svg" alt="Иконка телефона" class="phone-icon">
+                <p class="phone-number-text">8-999-999-99-99</p>
+            </div>
+        </div>
+
+        <div class="mini-buttons">
+            <div class="login-container">
+                <a>
+                    <img src="http://127.0.0.1:5500/images/icons/login.svg" alt="Иконка ЛК" class="login-icon">
+                </a>
+                <a class="mb-red-link">Войти</a>
+            </div>
+
+            <div class="basket-container">
+                <a href="#"><img src="http://127.0.0.1:5500/images/icons/basket.svg" alt="Иконка корзины"
+                                 class="basket-icon"></a>
+                <a href="#" class="mb-red-link">Корзина</a>
+            </div>
+        </div>
+    </div>
+</header>
+<nav class="nav-all-space">
+    <div class="nav-container">
+        <div class="main-menu-container">
+            <div class="catalog-container">
+                <a href="#">
+                    <img src="http://127.0.0.1:5500/images/icons/catalog.svg" alt="Иконка каталога"
+                         class="catalog-icon">
+                    <p>Каталог</p>
+                </a>
+                <ul class="catalog-menu">
+                </ul>
+            </div>
+            <a href="#">Услуги</a>
+            <a href="#">Вакансии</a>
+            <a href="#">Контакты</a>
+            <a href="#">О компании</a>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Поиск" class="search">
+            <a href="#" class="search-icon-link"><img src="http://127.0.0.1:5500/images/icons/search.svg"
+                                                      alt="Иконка поиска"
+                                                      class="search-icon"></a>
+        </div>
+    </div>
+</nav>
+<main class="user-profile-all-space">
+    <div class="user-profile-main-space">
+        <h2>Личный кабинет</h2>
+        <div class="menu-and-info">
+            <div class="menu-tabs">
+                <button class="menu-button active-menu-button" data-target="user-data">Мои данные</button>
+                <button class="menu-button" data-target="orders">Заказы</button>
+                <button class="menu-button" data-target="bonus-card">Бонусная карта</button>
+                <button class="menu-button" data-target="delivery-addresses">Адреса доставки</button>
+                <button class="menu-button" data-target="account-actions">Управление аккаунтом</button>
+                <button class="menu-button" data-target="exit">Выход</button>
+            </div>
+            <div class="user-info-container user-data">
+                <p class="user-data-label">Мои данные</p>
+                <p class="personal-info-label">Личная информация</p>
+                <div class="personal-info">
+                    <div class="personal-info-firstname">
+                        <p>Имя</p>
+                        <input type="text" class="personal-info-firstname-text" value={{ first_name }}>
+                    </div>
+                    <div class="personal-info-lastname">
+                        <p>Фамилия</p>
+                        <input type="text" class="personal-info-lastname-text" value={{ last_name }}>
+                    </div>
+                </div>
+                <div class="additional-info">
+                    <div class="user-phone-number">
+                        <p>Номер телефона</p>
+                        <input type="text" class="user-phone-number" value={{ phone_number }}>
+                    </div>
+                    <div class="user-email">
+                        <p>Email</p>
+                        <input type="text" class="user-email" value={{ email }}>
+                    </div>
+                </div>
+                <button class="save-changes custom-button">Сохранить изменения</button>
+            </div>
+            <div class="user-info-container orders">
+                <p>В разработке</p>
+            </div>
+            <div class="user-info-container bonus-card">
+                <p class="bonus-card-label">Бонусная карта</p>
+                <div class="bonus-card-info">
+                    <p>Ваш текущий уровень бонусной карты: {{ bonus_card.customer_level_name }}</p>
+                    <p>Ваша текущая скидка на товары: {{ bonus_card.customer_level.discount_amount_in_percent }} %</p>
+                    {% if bonus_card_max_level_message %}
+                    <p>Вы достигли последнего уровня бонусной карты!</p>
+                    {% else %}
+                    <p>Чтобы перейти на следующий уровень бонусной карты необходимо преобрести товаров на {{
+                    amount_of_purchases_to_next_level }} ₽</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="user-info-container delivery-addresses">
+                <p>В разработке</p>
+            </div>
+            <div class="user-info-container account-actions">
+                <p class="delete-profile-title">Удалить профиль</p>
+                <button class="delete-profile">Удалить</button>
+
+                <div class="delete-profile-form-bg">
+                    <div class="delete-profile-form">
+                        <div class="dpf-header">
+                            <p>Подтверждение действия</p>
+                            <img src="http://127.0.0.1:5500/images/icons/close.svg" class="close-button" alt="close icon">
+                        </div>
+                        <div class="confirmation">
+                            <p>Вы действительно хотите удалить аккаунт?</p>
+                            <div class="dpf-buttons">
+                                <button class="yes">Да</button>
+                                <button class="no">Нет</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+<footer class="footer-all-space">
+    <div class="footer-main-space">
+        <div class="contents">
+            <div class="customers">
+                <h3>Покупателям</h3>
+                <ol>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="#">Каталог</a></li>
+                    <li><a href="#">Оплата</a></li>
+                    <li><a href="#">Возврат товара</a></li>
+                    <li><a href="#">Бонусная система</a></li>
+                </ol>
+            </div>
+            <div class="services">
+                <h3>Услуги</h3>
+                <ol>
+                    <li><a href="#">Доставка</a></li>
+                    <li><a href="#">Разгрузка и подъем</a></li>
+                    <li><a href="#">Резка и распил</a></li>
+                    <li><a href="#">Монтажные работы</a></li>
+                </ol>
+            </div>
+            <div class="about-us">
+                <h3>О нас</h3>
+                <ol>
+                    <li><a href="#">Бренд СтройМаркет</a></li>
+                    <li><a href="#">Карьера в компании</a></li>
+                    <li><a href="#">Пользовательское соглашение</a></li>
+                    <li><a href="#">Отзыв о компании</a></li>
+                </ol>
+            </div>
+            <p class="copyright">© ООО СтройМаркет 2025</p>
+        </div>
+        <div class="info">
+            <div class="location">
+                <img src="http://127.0.0.1:5500/images/icons/map-marker.svg" alt="Map marker icon">
+                <p>г. Красноярск, <br>ул. Новосибирская 42</p>
+            </div>
+            <div class="phone-number">
+                <img src="http://127.0.0.1:5500/images/icons/call.svg" alt="Call icon">
+                <p>8-999-999-99-99</p>
+            </div>
+            <div class="opening-hours">
+                <img src="http://127.0.0.1:5500/images/icons/opening hours.svg" alt="Opening hours icon">
+                <p>Часы работы: будни 9:00-18:00 <br>сб, вс - выходной</p>
+            </div>
+            <div class="social-media">
+                <p>Мы в соц. сетях и мессенджерах:</p>
+                <a href="#"><img src="http://127.0.0.1:5500/images/icons/vk.svg" alt="VK icon"></a>
+                <a href="#"><img src="http://127.0.0.1:5500/images/icons/whatsapp.svg" alt="Whatsapp icon"></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="reg-login-bg-container">
+    <div class="reg-login-container">
+        <div class="tab-switcher">
+            <button class="tab" data-tab="1">Вход</button>
+            <button class="tab" data-tab="2">Регистрация</button>
+            <img class="close-button" src="http://127.0.0.1:5500/images/icons/close.svg" alt="close icon">
+        </div>
+        <div class="tabs">
+            <form action="" method="post" class="authorization-space" name="authForm">
+                <label for="auth-login" id="auth-login-label">Логин</label>
+                <input type="text" id="auth-login" name="login" required>
+
+                <label for="auth-password" class="password-label">Пароль</label>
+                <input type="password" id="auth-password" name="password" required>
+
+                <button type="submit" id="auth-button" name="authbutton">Войти</button>
+            </form>
+            <form action="" method="post" class="registration-space" name="regForm">
+                <label for="reg-login" id="reg-login-label">Логин</label>
+                <input type="text" id="reg-login" name="login" required>
+
+                <label for="reg-password" class="password-label">Пароль</label>
+                <input type="password" id="reg-password" name="password" required>
+
+                <button type="submit" id="reg-button" name="regbutton">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+<script src="http://127.0.0.1:5500/profile/user_data.js" defer></script>
+<script src="http://127.0.0.1:5500/profile/delete_profile.js" defer></script>
+</body>
+
+</html>

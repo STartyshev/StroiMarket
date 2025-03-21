@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="discription"
+        content="Всё для строительства, ремонта и отделки. Широкий ассортимент товаров оптом и в розницу. Доставка по городу (Красноярск) и области.">
+    <meta name="keywords"
+        content="строймаркет, стройматериалы, строительные материалы, отделочные материалы, строительство, ремонт, отделка">
+    <title>СтройМаркет - интернет-магазин строительных и отделочных материалов.</title>
+    <link rel="stylesheet" href="http://127.0.0.1:5500/styles/header.css" type="text/css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/styles/navigation.css" type="text/css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/styles/footer.css" type="text/css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/styles/main-theme.css" type="text/css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/styles/registration-login.css" type="text/css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/products_catalog/styles/items.css" type="text/css">
+    <!-- <link rel="stylesheet" href="http://127.0.0.1:5500/styles/dark-theme.css" type="text/css"> -->
+</head>
+
+<body class="main">
+    <header class="header-all-space">
+        <div class="header">
+            <div class="brand-container">
+                <a href="http://127.0.0.1:5500" style="display: flex;">
+                    <img src="http://127.0.0.1:5500/images/icons/main.svg" alt="Лого" class="main-logo">
+                </a>
+                <a href="http://127.0.0.1:5500">
+                    <h1>СтройМаркет</h1>
+                </a>
+            </div>
+
+            <div class="main-info-container">
+                <div class="location-container">
+                    <img src="http://127.0.0.1:5500/images/icons/map-marker.svg" alt="Иконка маркера" class="marker-icon">
+                    <a href="https://go.2gis.com/AWkUy" target="_blank" class="location-text red-link">г.
+                        Красноярск,<br>ул.
+                        Новосибирская 42</a>
+                </div>
+                <div class="phone-number-container">
+                    <img src="http://127.0.0.1:5500/images/icons/call.svg" alt="Иконка телефона" class="phone-icon">
+                    <p class="phone-number-text">8-999-999-99-99</p>
+                </div>
+            </div>
+
+            <div class="mini-buttons">
+                <div class="login-container">
+                    <a href="#">
+                        <img src="http://127.0.0.1:5500/images/icons/login.svg" alt="Иконка ЛК" class="login-icon">
+                    </a>
+                    <a href="#" class="mb-red-link">Войти</a>
+                </div>
+
+                <div class="basket-container">
+                    <a href="#"><img src="http://127.0.0.1:5500/images/icons/basket.svg" alt="Иконка корзины" class="basket-icon"></a>
+                    <a href="#" class="mb-red-link">Корзина</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="nav-all-space">
+        <div class="nav-container">
+            <div class="main-menu-container">
+                <div class="catalog-container">
+                    <a href="#">
+                        <img src="http://127.0.0.1:5500/images/icons/catalog.svg" alt="Иконка каталога" class="catalog-icon">
+                        <p>Каталог</p>
+                    </a>
+                    <ul class="catalog-menu">
+                    </ul>
+                </div>
+                <a href="#">Услуги</a>
+                <a href="#">Вакансии</a>
+                <a href="#">Контакты</a>
+                <a href="#">О компании</a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Поиск" class="search">
+                <a href="#" class="search-icon-link"><img src="http://127.0.0.1:5500/images/icons/search.svg" alt="Иконка поиска"
+                        class="search-icon"></a>
+            </div>
+        </div>
+    </nav>
+    <main>
+       <div class="items-all-space">
+        <div class="items-main-space">
+            <div class="navigation">
+                <a class="custom-button" href="http://127.0.0.1:5500">Главная</a>
+                <img src="http://127.0.0.1:5500/images/icons/right_arrow.svg" alt="right arrow icon">
+                <a class="custom-button" href="http://127.0.0.1:5500/catalog">Каталог товаров</a>
+                <img src="http://127.0.0.1:5500/images/icons/right_arrow.svg" alt="right arrow icon">
+                <a class="custom-button" href="http://127.0.0.1:5500/catalog/{{ product_type }}">{{ product_type }}</a>
+                <img src="http://127.0.0.1:5500/images/icons/right_arrow.svg" alt="right arrow icon">
+                <a class="custom-button" href="http://127.0.0.1:5500/catalog/{{ product_type }}/{{ product_subtype }}">{{ product_subtype }}</a>
+            </div>
+            <div class="items-container">
+                <div class="settings">
+                    <p>Розничная цена</p>
+                    <p>Производитель</p>
+                    <p>Размер</p>
+                </div>
+                <div class="items">
+                    <div class="items-header">
+                        <h2>{{ product_subtype }}</h2>
+                    </div>
+                    {% if products_from_db %}
+                    <div class="cards">
+                        {% if products_from_db|length >= 16 %}
+                        {% for product in products_from_db[:16] %}
+                        <div class="product-card">
+                            <a href="http://127.0.0.1:5500/catalog/product/{{ product.id }}" class="image-link">
+                                <img src="http://127.0.0.1:5500/{{ product.image_link }}" alt="Product {{ product.id }}">
+                            </a>
+                            <a href="http://127.0.0.1:5500/catalog/product/{{ product.id }}">
+                                <p class="product-name">{{ product.name }}</p>
+                            </a>
+                            <div class="text">
+                                <div class="product-availability-container">
+                                    {% if product.quantity_in_stock == 0 %}
+                                    <img src="http://127.0.0.1:5500/images/icons/check-icon.svg" alt="Check icon">
+                                    <p class="product-availability">Товара нет в наличии</p>
+                                    {% else %}
+                                    <img src="http://127.0.0.1:5500/images/icons/check-icon.svg" alt="Check icon">
+                                    <p class="product-availability">Товар в наличии</p>
+                                    {% endif %}
+                                </div>
+                                <p class="product-price-text">Цена за штуку</p>
+                                <p class="product-price">{{ product.price }} ₽</p>
+                            </div>
+                            <div class="buttons">
+                                <div class="count-button">
+                                    <p>Кол-во:</p>
+                                    <input type="number">
+                                </div>
+                                <a href="#basket">
+                                    <button class="basket-button">В корзину</button>
+                                </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        {% for product in products_from_db %}
+                        <div class="product-card">
+                            <a href="http://127.0.0.1:5500/catalog/product/{{ product.id }}" class="image-link">
+                                <img src="http://127.0.0.1:5500/{{ product.image_link }}" alt="Product {{ product.id }}">
+                            </a>
+                            <a href="http://127.0.0.1:5500/catalog/product/{{ product.id }}">
+                                <p class="product-name">{{ product.name }}</p>
+                            </a>
+                            <div class="text">
+                                <div class="product-availability-container">
+                                    {% if product.quantity_in_stock == 0 %}
+                                    <img src="http://127.0.0.1:5500/images/icons/check-icon.svg" alt="Check icon">
+                                    <p class="product-availability">Товара нет в наличии</p>
+                                    {% else %}
+                                    <img src="http://127.0.0.1:5500/images/icons/check-icon.svg" alt="Check icon">
+                                    <p class="product-availability">Товар в наличии</p>
+                                    {% endif %}
+                                </div>
+                                <p class="product-price-text">Цена за штуку</p>
+                                <p class="product-price">{{ product.price }}</p>
+                            </div>
+                            <div class="buttons">
+                                <div class="count-button">
+                                    <p>Кол-во:</p>
+                                    <input type="number">
+                                </div>
+                                <a href="#basket">
+                                    <button class="basket-button">В корзину</button>
+                                </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                    <div class="items-navigation">
+                        {% if (products_from_db|length / 16)|ceil > 1 %}
+                        <a href=""><img src="http://127.0.0.1:5500/images/icons/angle-small-left.svg" alt=""></a>
+                        {% for i in range(1, (products_from_db|length / 16)|ceil) %}
+                        <a href="">{{ i }}</a>
+                        {% endfor %}
+                        <a href=""><img src="http://127.0.0.1:5500/images/icons/angle-small-right.svg" alt=""></a>
+                        <button>Показать еще</button>
+                        {% endif %}
+                    </div>
+                    {% else %}
+                    <div class="error">Товары не найдены</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+       </div> 
+    </main>
+    <footer class="footer-all-space">
+        <div class="footer-main-space">
+            <div class="contents">
+                <div class="customers">
+                    <h3>Покупателям</h3>
+                    <ol>
+                        <li><a href="#">Акции</a></li>
+                        <li><a href="#">Каталог</a></li>
+                        <li><a href="#">Оплата</a></li>
+                        <li><a href="#">Возврат товара</a></li>
+                        <li><a href="#">Бонусная система</a></li>
+                    </ol>
+                </div>
+                <div class="services">
+                    <h3>Услуги</h3>
+                    <ol>
+                        <li><a href="#">Доставка</a></li>
+                        <li><a href="#">Разгрузка и подъем</a></li>
+                        <li><a href="#">Резка и распил</a></li>
+                        <li><a href="#">Монтажные работы</a></li>
+                    </ol>
+                </div>
+                <div class="about-us">
+                    <h3>О нас</h3>
+                    <ol>
+                        <li><a href="#">Бренд СтройМаркет</a></li>
+                        <li><a href="#">Карьера в компании</a></li>
+                        <li><a href="#">Пользовательское соглашение</a></li>
+                        <li><a href="#">Отзыв о компании</a></li>
+                    </ol>
+                </div>
+                <p class="copyright">© ООО СтройМаркет 2025</p>
+            </div>
+            <div class="info">
+                <div class="location">
+                    <img src="http://127.0.0.1:5500/images/icons/map-marker.svg" alt="Map marker icon">
+                    <p>г. Красноярск, <br>ул. Новосибирская 42</p>
+                </div>
+                <div class="phone-number">
+                    <img src="http://127.0.0.1:5500/images/icons/call.svg" alt="Call icon">
+                    <p>8-999-999-99-99</p>
+                </div>
+                <div class="opening-hours">
+                    <img src="http://127.0.0.1:5500/images/icons/opening hours.svg" alt="Opening hours icon">
+                    <p>Часы работы: будни 9:00-18:00 <br>сб, вс - выходной</b></p>
+                </div>
+                <div class="social-media">
+                    <p>Мы в соц. сетях и мессенджерах:</p>
+                    <a href="#"><img src="http://127.0.0.1:5500/images/icons/vk.svg" alt="VK icon"></a>
+                    <a href="#"><img src="http://127.0.0.1:5500/images/icons/whatsapp.svg" alt="Whatsapp icon"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="reg-login-bg-container">
+        <div class="reg-login-container">
+            <div class="tab-switcher">
+                <button class="tab" data-tab="1">Вход</button>
+                <button class="tab" data-tab="2">Регистрация</button>
+                <img class="close-button" src="http://127.0.0.1:5500/images/icons/close.svg" alt="close icon">
+            </div>
+            <div class="tabs">
+                <form action="" method="post" class="authorization-space" name="authForm">
+                    <label for="auth-login" id="auth-login-label">Логин</label>
+                    <input type="text" id="auth-login" name="login" required>
+
+                    <label for="auth-password" class="password-label">Пароль</label>
+                    <input type="password" id="auth-password" name="password" required>
+
+                    <button type="submit" id="auth-button" name="authbutton">Войти</button>
+                </form>
+                <form action="" method="post" class="registration-space" name="regForm">
+                    <label for="reg-login" id="reg-login-label">Логин</label>
+                    <input type="text" id="reg-login" name="login" required>
+
+                    <label for="reg-password" class="password-label">Пароль</label>
+                    <input type="password" id="reg-password" name="password" required>
+
+                    <button type="submit" id="reg-button" name="regbutton">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+    <script src="http://127.0.0.1:5500/products_catalog/main_menu.js" defer></script>
+    <script src="http://127.0.0.1:5500/products_catalog/user_data.js"></script>
+    <!-- <script src="lab6.js" type="text/javascript"></script> -->
+</body>
+
+</html>

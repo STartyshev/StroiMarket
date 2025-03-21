@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="discription"
+        content="Всё для строительства, ремонта и отделки. Широкий ассортимент товаров оптом и в розницу. Доставка по городу (Красноярск) и области.">
+    <meta name="keywords"
+        content="строймаркет, стройматериалы, строительные материалы, отделочные материалы, строительство, ремонт, отделка">
+    <title>СтройМаркет - интернет-магазин строительных и отделочных материалов.</title>
+    <link rel="stylesheet" href="http://127.0.0.1:5500/styles/header.css" type="text/css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/styles/navigation.css" type="text/css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/styles/footer.css" type="text/css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/styles/main-theme.css" type="text/css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/styles/registration-login.css" type="text/css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/product/styles/product.css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/product/styles/feedback-form.css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/product/styles/feedback.css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/product/styles/purchasing_info.css">
+    <!-- <link rel="stylesheet" href="http://127.0.0.1:5500/styles/dark-theme.css" type="text/css"> -->
+</head>
+
+<body class="main">
+    <header class="header-all-space">
+        <div class="header">
+            <div class="brand-container">
+                <a href="http://127.0.0.1:5500" style="display: flex;">
+                    <img src="http://127.0.0.1:5500/images/icons/main.svg" alt="Лого" class="main-logo">
+                </a>
+                <a href="http://127.0.0.1:5500">
+                    <h1>СтройМаркет</h1>
+                </a>
+            </div>
+
+            <div class="main-info-container">
+                <div class="location-container">
+                    <img src="http://127.0.0.1:5500/images/icons/map-marker.svg" alt="Иконка маркера" class="marker-icon">
+                    <a href="https://go.2gis.com/AWkUy" target="_blank" class="location-text red-link">г.
+                        Красноярск,<br>ул.
+                        Новосибирская 42</a>
+                </div>
+                <div class="phone-number-container">
+                    <img src="http://127.0.0.1:5500/images/icons/call.svg" alt="Иконка телефона" class="phone-icon">
+                    <p class="phone-number-text">8-999-999-99-99</p>
+                </div>
+            </div>
+
+            <div class="mini-buttons">
+                <div class="login-container">
+                    <a>
+                        <img src="http://127.0.0.1:5500/images/icons/login.svg" alt="Иконка ЛК" class="login-icon">
+                    </a>
+                    <a class="mb-red-link">Войти</a>
+                </div>
+
+                <div class="basket-container">
+                    <a href="#"><img src="http://127.0.0.1:5500/images/icons/basket.svg" alt="Иконка корзины" class="basket-icon"></a>
+                    <a href="#" class="mb-red-link">Корзина</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="nav-all-space">
+        <div class="nav-container">
+            <div class="main-menu-container">
+                <div class="catalog-container">
+                    <a href="#">
+                        <img src="http://127.0.0.1:5500/images/icons/catalog.svg" alt="Иконка каталога" class="catalog-icon">
+                        <p>Каталог</p>
+                    </a>
+                    <ul class="catalog-menu">
+                    </ul>
+                </div>
+                <a href="#">Услуги</a>
+                <a href="#">Вакансии</a>
+                <a href="#">Контакты</a>
+                <a href="#">О компании</a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Поиск" class="search">
+                <a href="#" class="search-icon-link"><img src="http://127.0.0.1:5500/images/icons/search.svg" alt="Иконка поиска"
+                        class="search-icon"></a>
+            </div>
+        </div>
+    </nav>
+    <main>
+       <div class="product-all-space">
+        <div class="product-work-space">
+            <div class="navigation">
+                <a class="custom-button" href="http://127.0.0.1:5500">Главная</a>
+                <img src="http://127.0.0.1:5500/images/icons/right_arrow.svg" alt="right arrow icon">
+                <a class="custom-button" href="http://127.0.0.1:5500/catalog">Каталог товаров</a>
+                <img src="http://127.0.0.1:5500/images/icons/right_arrow.svg" alt="right arrow icon">
+                <a class="custom-button" href="http://127.0.0.1:5500/catalog/{{ product_type }}">{{ product_type }}</a>
+                <img src="http://127.0.0.1:5500/images/icons/right_arrow.svg" alt="right arrow icon">
+                <a class="custom-button" href="http://127.0.0.1:5500/catalog/{{ product_type }}/{{ product_subtype }}">{{ product_subtype }}</a>
+            </div>
+            <div class="product-container">
+                <div class="product-space">
+                    <div class="product-main-space">
+                        <div class="product-image">
+                            <img src="http://127.0.0.1:5500/{{ product_image_link }}" alt="">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-main-info">
+                                <div class="product-header">
+                                    <h2>{{ product_name }}</h2>
+                                </div>
+                                <div class="product-description">
+                                    <p>{{ product_description }}</p>
+                                </div>
+                            </div>
+                            {% if role == "guest" %}
+                            <div class="purchasing-information">
+                                <div class="guest-bonus-price-container">
+                                    <p class="guest-price-title">Цена</p>
+                                    <p class="guest-bonus-price">С картой {{ product_bonus_price }} ₽</p>
+                                </div>
+                                <p class="guest-price">Без карты {{ product_price }} ₽</p>
+                                <p class="availability">В наличии: {{ product_availability }} шт</p>
+                                <div class="count-buttons">
+                                    <a class="decrease">-</a>
+                                    <a>1</a>
+                                    <a class="increase">+</a>
+                                </div>
+                                <button class="basket-button">В корзину</button>
+                            </div>
+                            {% endif %}
+
+                            {% if role == "user" %}
+                            <div class="purchasing-information">
+                                <div class="user-bonus">
+                                    <p class="user-bonus-price-title">Ваша цена</p>
+                                    <p class="user-bonus-price">{{ product_bonus_price }} ₽</p>
+                                </div>
+                                <p class="user-price-title">Цена для всех</p>
+                                <p class="user-price">{{ product_price }} ₽</p>
+                                <p class="availability">В наличии: {{ product_availability }} шт</p>
+                                <div class="count-buttons">
+                                    <a class="decrease">-</a>
+                                    <a>1</a>
+                                    <a class="increase">+</a>
+                                </div>
+                                <button class="basket-button">В корзину</button>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="product-feedbacks">
+                        <h3>Отзывы покупателей</h3>
+                        {% if feedbacks %}
+                        {% for feedback in feedbacks %}
+                        <div class="feedback-container">
+                            <div class="feedback-id">{{ feedback.id }}</div>
+                            <div class="feedback-header">
+                                <p class="user-name">
+                                    {{ feedback.author.first_name }} {{ feedback.author.last_name[0] }}.
+                                </p>
+                                <p>{{ feedback.date_of_update }}</p>
+                            </div>
+                            <div class="user-feedback">
+                                <div class="liked">
+                                    <p class="label">Понравилось:</p>
+                                    <p class="text-review">{{ feedback.liked_text }}</p>
+                                </div>
+                                <div class="disliked">
+                                    <p class="label">Не понравилось:</p>
+                                    <p class="text-review">{{ feedback.disliked_text }}</p>
+                                </div>
+                            </div>
+                            {% if feedback.admin_comment %}
+                            <div class="admin-comment-container">
+                                <div class="admin-name">
+                                    <img src="http://127.0.0.1:5500/images/icons/main.svg" alt="Main logo">
+                                    <p>СтройМаркет</p>
+                                </div>
+                                <div class="admin-comment">{{ feedback.admin_comment }}</div>
+                            </div>
+                            {% endif %}
+                            {% if role == "admin" %}
+                            <div class="add-admin-comment-container">
+                                <p class="admin-comment-text-label">Комментарий</p>
+                                <textarea id="admin-comment-text" required></textarea>
+                                <button class="add-admin-comment custom-button">Ответить</button>
+                                <button class="delete-feedback custom-button">Удалить отзыв</button>
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <p>Отзывов о продукте нет</p>
+                        {% endif %}
+                    </div>
+                    <button class="feedback custom-button">Оставить отзыв</button>
+                </div>
+            </div>
+        </div>
+       </div> 
+    </main>
+    <footer class="footer-all-space">
+        <div class="footer-main-space">
+            <div class="contents">
+                <div class="customers">
+                    <h3>Покупателям</h3>
+                    <ol>
+                        <li><a href="#">Акции</a></li>
+                        <li><a href="#">Каталог</a></li>
+                        <li><a href="#">Оплата</a></li>
+                        <li><a href="#">Возврат товара</a></li>
+                        <li><a href="#">Бонусная система</a></li>
+                    </ol>
+                </div>
+                <div class="services">
+                    <h3>Услуги</h3>
+                    <ol>
+                        <li><a href="#">Доставка</a></li>
+                        <li><a href="#">Разгрузка и подъем</a></li>
+                        <li><a href="#">Резка и распил</a></li>
+                        <li><a href="#">Монтажные работы</a></li>
+                    </ol>
+                </div>
+                <div class="about-us">
+                    <h3>О нас</h3>
+                    <ol>
+                        <li><a href="#">Бренд СтройМаркет</a></li>
+                        <li><a href="#">Карьера в компании</a></li>
+                        <li><a href="#">Пользовательское соглашение</a></li>
+                        <li><a href="#">Отзыв о компании</a></li>
+                    </ol>
+                </div>
+                <p class="copyright">© ООО СтройМаркет 2025</p>
+            </div>
+            <div class="info">
+                <div class="location">
+                    <img src="http://127.0.0.1:5500/images/icons/map-marker.svg" alt="Map marker icon">
+                    <p>г. Красноярск, <br>ул. Новосибирская 42</p>
+                </div>
+                <div class="phone-number">
+                    <img src="http://127.0.0.1:5500/images/icons/call.svg" alt="Call icon">
+                    <p>8-999-999-99-99</p>
+                </div>
+                <div class="opening-hours">
+                    <img src="http://127.0.0.1:5500/images/icons/opening hours.svg" alt="Opening hours icon">
+                    <p>Часы работы: будни 9:00-18:00 <br>сб, вс - выходной</p>
+                </div>
+                <div class="social-media">
+                    <p>Мы в соц. сетях и мессенджерах:</p>
+                    <a href="#"><img src="http://127.0.0.1:5500/images/icons/vk.svg" alt="VK icon"></a>
+                    <a href="#"><img src="http://127.0.0.1:5500/images/icons/whatsapp.svg" alt="Whatsapp icon"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="reg-login-bg-container">
+        <div class="reg-login-container">
+            <div class="tab-switcher">
+                <button class="tab" data-tab="1">Вход</button>
+                <button class="tab" data-tab="2">Регистрация</button>
+                <img class="close-button" src="http://127.0.0.1:5500/images/icons/close.svg" alt="close icon">
+            </div>
+            <div class="tabs">
+                <form action="" method="post" class="authorization-space" name="authForm">
+                    <label for="auth-login" id="auth-login-label">Логин</label>
+                    <input type="text" id="auth-login" name="login" required>
+
+                    <label for="auth-password" class="password-label">Пароль</label>
+                    <input type="password" id="auth-password" name="password" required>
+
+                    <button type="submit" id="auth-button" name="authbutton">Войти</button>
+                </form>
+                <form action="" method="post" class="registration-space" name="regForm">
+                    <label for="reg-login" id="reg-login-label">Логин</label>
+                    <input type="text" id="reg-login" name="login" required>
+
+                    <label for="reg-password" class="password-label">Пароль</label>
+                    <input type="password" id="reg-password" name="password" required>
+
+                    <button type="submit" id="reg-button" name="regbutton">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="feedback-form-bg-container">
+        <div class="feedback-form-container">
+            <div class="feedback-form-header">
+                <h3>Мой отзыв</h3>
+                <img class="close-button" src="http://127.0.0.1:5500/images/icons/close.svg" alt="close icon">
+            </div>
+            <div class="feedback-form">
+                <p id="liked-text-label">Понравилось</p>
+                <textarea id="liked-text" required></textarea>
+
+                <p class="disliked-text-label">Не понравилось</p>
+                <textarea id="disliked-text" required></textarea>
+
+                <button class="custom-button" id="send-button">Отправить</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+    <script src="http://127.0.0.1:5500/product/main_menu.js" defer></script>
+    <script src="http://127.0.0.1:5500/product/user_data.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<div class="feedback-container">
+    <div class="feedback-id">{{ id }}</div>
+    <div class="feedback-header">
+        <p class="user-name">{{ user_name }}</p>
+        <p>{{ feedback_date }}</p>
+    </div>
+    <div class="user-feedback">
+        <div class="liked">
+            <p class="label">Понравилось:</p>
+            <p class="text-review">{{ liked_text }}</p>
+        </div>
+        <div class="disliked">
+            <p class="label">Не понравилось:</p>
+            <p class="text-review">{{ disliked_text }}</p>
+        </div>
+    </div>
+    <div class="add-admin-comment-container">
+        <p class="admin-comment-text-label">Комментарий</p>
+        <textarea id="admin-comment-text" required></textarea>
+        <button class="add-admin-comment custom-button">Ответить</button>
+        <button class="delete-feedback custom-button">Удалить отзыв</button>
+    </div>
+</div>
